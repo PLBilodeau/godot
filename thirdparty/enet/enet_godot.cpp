@@ -41,7 +41,7 @@
 #include "core/os/os.h"
 
 // This must be last for windows to compile (tested with MinGW)
-#include "enet/enet.h"
+#include "./enet.h"
 
 /// Abstract ENet interface for UDP/DTLS.
 class ENetGodotSocket {

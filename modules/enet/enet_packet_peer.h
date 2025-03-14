@@ -33,7 +33,7 @@
 
 #include "core/io/packet_peer.h"
 
-#include <enet/enet.h>
+#include <../../thirdparty/enet/enet.h>
 
 class ENetPacketPeer : public PacketPeer {
 	GDCLASS(ENetPacketPeer, PacketPeer);

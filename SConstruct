@@ -286,6 +286,19 @@ opts.Add("rcflags", "Custom flags for Windows resource compiler")
 # in following code (especially platform and custom_modules).
 opts.Update(env)
 
+# Add path to ENet headers
+env.Append(CPPPATH=['thirdparty/enet/enet'])
+
+# Add path to ENet libraries (adjust as needed based on your build structure)
+env.Append(LIBPATH=['thirdparty/enet/build'])
+
+# Link against the ENet library
+env.Append(LIBS=['enet'])
+
+# Debugging the build process (optional)
+print("CPPPATH:", env["CPPPATH"])
+print("LIBPATH:", env["LIBPATH"])
+
 # Setup caching logic early to catch everything.
 methods.prepare_cache(env)
 

@@ -36,7 +36,7 @@
 #include "core/crypto/crypto.h"
 #include "core/object/ref_counted.h"
 
-#include <enet/enet.h>
+#include <../../thirdparty/enet/enet.h>
 
 template <typename T>
 class TypedArray;

@@ -1,13 +1,13 @@
-/** 
+/**
  @file  packet.c
  @brief ENet packet management functions
 */
 #include <string.h>
 #define ENET_BUILDING_LIB 1
-#include "enet/enet.h"
+#include "./enet.h"
 
-/** @defgroup Packet ENet packet functions 
-    @{ 
+/** @defgroup Packet ENet packet functions
+    @{
 */
 
 /** Creates a packet that may be sent to a peer.
@@ -67,8 +67,8 @@ enet_packet_destroy (ENetPacket * packet)
     enet_free (packet);
 }
 
-/** Attempts to resize the data in the packet to length specified in the 
-    dataLength parameter 
+/** Attempts to resize the data in the packet to length specified in the
+    dataLength parameter
     @param packet packet to resize
     @param dataLength new size for the packet data
     @returns 0 on success, < 0 on failure
@@ -77,7 +77,7 @@ int
 enet_packet_resize (ENetPacket * packet, size_t dataLength)
 {
     enet_uint8 * newData;
-   
+
     if (dataLength <= packet -> dataLength || (packet -> flags & ENET_PACKET_FLAG_NO_ALLOCATE))
     {
        packet -> dataLength = dataLength;
@@ -91,7 +91,7 @@ enet_packet_resize (ENetPacket * packet, size_t dataLength)
 
     memcpy (newData, packet -> data, packet -> dataLength);
     enet_free (packet -> data);
-    
+
     packet -> data = newData;
     packet -> dataLength = dataLength;
 
