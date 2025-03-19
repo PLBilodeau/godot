@@ -101,6 +101,8 @@ TEST_CASE("[ENetConnection] Send and Receive") {
 	client->destroy();
 }
 
+// Les tests ne sont pas tout implementer parce que j'essayais de faire fonctionner un avant.
+
 } // namespace TestENetConnection
 
 #endif // TEST_ENET_CONNECTION_H
